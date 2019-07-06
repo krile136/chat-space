@@ -8,6 +8,7 @@
 
 ### Association
 - has_many :comments
+- has_many :members
 - has_many :groups, through: :members
 ---
 
