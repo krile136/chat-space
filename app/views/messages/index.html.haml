@@ -1,0 +1,53 @@
+
+.sidebar
+  .sidebar__header
+    .sidebar__header--name
+      name
+    =link_to "#" do
+      = fa_icon 'edit', class: "sidebar__header--edit"
+    =link_to "#" do
+      = fa_icon 'gear', class: "sidebar__header--gear"
+  .sidebar__room
+    .sidebar__room--name
+      テストルーム
+    .sidebar__room--text
+      こんにちは！
+  .sidebar__room
+    .sidebar__room--name
+      テストルーム２
+    .sidebar__room--text
+      テストメッセージ
+.main
+  .main__header
+    .main__header--room-name
+      テストルーム
+    .main__header--edit
+      Edit
+    %ul.main__header--member
+      %li<
+        Member :
+        takeshi
+        kasumi
+        machisu
+        erika
+  .main__chat
+    .main__chat--name
+      takeshi
+    .main__chat--date
+      2019/07/08(Mon) 12:00:00
+    .main__chat--message
+      hello!!
+    .main__chat--name
+      kasumi
+    .main__chat--date
+      2019/07/08(Mon) 13:15:00
+    .main__chat--message
+      こんにちは！
+  .main__footer
+    %form
+      %input.main__footer--input(placeholder = "type a message")
+      %label
+        %i.fa.fa-picture-o{class: "main__footer--image"}
+        %input{type: "file",id: "filesend"}
+    .main__footer--send
+      Send
