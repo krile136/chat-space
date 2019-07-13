@@ -1,0 +1,29 @@
+$sidebar-header-color: #253141;
+$sidebar-room-color: #2f3e51;
+$sidebar-width: 300px;
+$sidebar-side-margin: 20px;
+
+$main-header-color: white;
+$main-header-border-color: #eeeeee;
+$main-header-room-name-color: #333333;
+$main-header-member-color: #999999;
+$main-header-height: 100px;
+$main-width: calc(100vw - #{$sidebar-width});
+$main-side-margin: 40px;
+$main-send-width: 100px;
+$main-input-width: calc(100vw - #{$sidebar-width} - #{$main-side-margin} * 2 - #{$main-send-width} - 15px);
+$main-picture-position: calc(#{$main-side-margin} + #{$main-input-width} - 21px - 10px);
+
+$main-chat-color: #fafafa;
+$main-chat-name-color: #434A54;
+
+$main-edit-color: #38AEF0;
+
+$main-footer-color: #DDDDDD;
+
+@mixin fixed_width{
+  position: fixed;
+  z-index: 1;
+  width: calc(100vw - #{$sidebar-width});
+}
+

@@ -1,0 +1,48 @@
+.sidebar{
+  height: 100vh;
+  width: $sidebar-width;
+  float: left;
+  background-color: $sidebar-room-color;
+  font-weight: bold;
+  color: white;
+  position: fixed;
+  z-index: 1;
+  
+  &__header{
+    height: 100px;
+    background-color:$sidebar-header-color;
+    font-size: 16px;
+    position: relative;
+    &--name{ 
+      line-height: 100px;
+      padding-left: $sidebar-side-margin;
+      float: left;
+    }
+    &--gear{
+      display: inline-block;
+      color: white;
+      position: absolute;
+      top: 42px;
+      left: $sidebar-width - $sidebar-side-margin - 16px;
+    }
+    &--edit{
+      display: inline-block;
+      color: white;
+      position: absolute;
+      top: 42px;
+      left: $sidebar-width - $sidebar-side-margin - (16px * 2) - 5px;
+    }
+  }
+  &__room{
+    height: 91px;
+    padding-top: 20px;
+    padding-left: $sidebar-side-margin;
+    &--name{
+      font-size: 15px;
+    }
+    &--text{
+      padding-top: 5px;
+      font-size: 11px;
+    }
+  }  
+}
