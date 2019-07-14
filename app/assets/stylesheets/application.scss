@@ -3,5 +3,6 @@
 @import "border-box";     //全要素にbox-sizing: border-box;を適用
 @import "sidebar";        //sidebar要素
 @import "messages";       //チャット画面要素
+@import "flash";          //フラッシュメッセージ用
 @import "font-awesome";
-
+@import "user"

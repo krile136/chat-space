@@ -1,0 +1,15 @@
+$light_blue: #38AEF0;
+$light_gray: #999;
+$black: #434a54;
+$alert_orange: #F35500;
+
+.flash {
+  color: white;
+  text-align: center;
+  &__alert{
+    background-color: $alert_orange;
+  }
+  &__notice {
+    background-color: $light_blue;
+  }
+}
