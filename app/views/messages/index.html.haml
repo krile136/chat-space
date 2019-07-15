@@ -1,35 +1,16 @@
-
-.sidebar
-  .sidebar__header
-    .sidebar__header--name
-      = current_user.name
-    =link_to new_group_path() do
-      = fa_icon 'edit', class: "sidebar__header--edit"
-    =link_to edit_user_path(current_user) do
-      = fa_icon 'gear', class: "sidebar__header--gear"
-  .sidebar__room
-    .sidebar__room--name
-      テストルーム
-    .sidebar__room--text
-      こんにちは！
-  .sidebar__room
-    .sidebar__room--name
-      テストルーム２
-    .sidebar__room--text
-      テストメッセージ
+= render 'shared/sidebar'
 .main
   .main__header
     .main__header--room-name
-      テストルーム
-    .main__header--edit
-      Edit
+      = current_user.groups[params[:group_id].to_i - 1].name
+    = link_to edit_group_path(params[:group_id]), class: "main__header--button" do
+      .main__header--edit
+        Edit
     %ul.main__header--member
-      %li<
+      %li
         Member :
-        takeshi
-        kasumi
-        machisu
-        erika
+        - current_user.groups[params[:group_id].to_i - 1].users.each do |user|
+          = user.name
   .main__chat
     .main__chat--name
       takeshi

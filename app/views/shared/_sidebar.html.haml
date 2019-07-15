@@ -1,0 +1,15 @@
+.sidebar
+  .sidebar__header
+    .sidebar__header--name
+      = current_user.name
+    =link_to new_group_path() do
+      = fa_icon 'edit', class: "sidebar__header--edit"
+    =link_to edit_user_path(current_user) do
+      = fa_icon 'gear', class: "sidebar__header--gear"
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .sidebar__room
+        .sidebar__room--name
+          = group.name
+        .sidebar__room--text
+          こんにちは！
