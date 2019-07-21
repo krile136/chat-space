@@ -1,6 +1,5 @@
 .wrapper{
   width: 100vw;
-  background-color: $main-chat-color
 }
 .main{
   width: $main-width;
@@ -45,6 +44,8 @@
   &__chat{
     padding-left: $main-side-margin;
     padding-top: $main-header-height + 6px;
+    min-height: 100vh;
+    background-color: $main-chat-color;
     &--clear{
       clear: both;
     }
