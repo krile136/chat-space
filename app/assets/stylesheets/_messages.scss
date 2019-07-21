@@ -1,7 +1,9 @@
+.wrapper{
+  width: 100vw;
+  background-color: $main-chat-color
+}
 .main{
-  height: 100vh;
   width: $main-width;
-  background-color: $main-chat-color;
   margin-left: $sidebar-width;
   &__header{
     @include fixed_width;
@@ -43,6 +45,9 @@
   &__chat{
     padding-left: $main-side-margin;
     padding-top: $main-header-height + 6px;
+    &--clear{
+      clear: both;
+    }
     &--name{
       color: $main-chat-name-color;
       padding-top: 40px;
@@ -60,6 +65,16 @@
     &--message{
       padding-top: 40px + 16px + 10px;
       font-size: 14px;
+    }
+    &--image{
+      padding-top: 10px;
+      float: left;
+      width: 30%;
+      height: auto;
+    }
+    &--finish-space{
+      clear: both;
+      height: 200px; 
     }
   }
   &__footer{
@@ -95,6 +110,7 @@
       text-align: center;
       float: left;
       margin: 20px 0 0 15px;
+      cursor: pointer;
     }
   }
 }
