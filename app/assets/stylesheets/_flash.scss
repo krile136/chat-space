@@ -3,6 +3,11 @@ $light_gray: #999;
 $black: #434a54;
 $alert_orange: #F35500;
 
+.notification {
+  // 
+  z-index: 1;
+}
+
 .flash {
   color: white;
   text-align: center;

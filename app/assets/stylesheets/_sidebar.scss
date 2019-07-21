@@ -18,6 +18,7 @@
       padding-left: $sidebar-side-margin;
       float: left;
     }
+
     &--gear{
       display: inline-block;
       color: white;
@@ -25,6 +26,7 @@
       top: 42px;
       left: $sidebar-width - $sidebar-side-margin - 16px;
     }
+
     &--edit{
       display: inline-block;
       color: white;
@@ -33,16 +35,22 @@
       left: $sidebar-width - $sidebar-side-margin - (16px * 2) - 5px;
     }
   }
+
+  &__room-link{
+    text-decoration: none;
+    color: white;
+  }
+
   &__room{
     height: 91px;
     padding-top: 20px;
     padding-left: $sidebar-side-margin;
+
     &--name{
-      color: white;
       font-size: 15px;
     }
+    
     &--text{
-      color: white;
       padding-top: 5px;
       font-size: 11px;
     }
