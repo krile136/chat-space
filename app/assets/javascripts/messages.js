@@ -34,17 +34,17 @@ $(document).on('turbolinks:load', function () {
       processData: false,
       contentType: false
     })
-      .done(function (data) {
-        var html = buildHTML(data);
-        $('.messages').append(html);
-        $('.main__footer--input').val("");
-        scrollBottom();
-      })
-      .fail(function () {
-        alert('メッセージを入力してください');
-      })
-      .always(function (data) {
-        $('.main__footer--send').prop('disabled', false);
-      })
+    .done(function (data) {
+      var html = buildHTML(data);
+      $('.messages').append(html);
+      $('.main__footer--input').val("");
+      scrollBottom();
+    })
+    .fail(function () {
+      alert('メッセージを入力してください');
+    })
+    .always(function (data) {
+      $('.main__footer--send').prop('disabled', false);
+    })
   })
 })
