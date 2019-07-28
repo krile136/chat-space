@@ -13,15 +13,14 @@
           - current_user.groups[params[:group_id].to_i - 1].users.each do |user|
             = user.name
     .main__chat
-      = render partial: 'message', collection: @messages
+      .messages
+        = render partial: 'message', collection: @messages
       .main__chat--finish-space
     .main__footer
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], id: "new_message" do |f|
         = f.text_field :content, class: 'main__footer--input', placeholder: "type a message"
         %label
           = fa_icon 'picture-o', class: "main__footer--image"
           = f.file_field :image, type: "file", id: "filesend"
         =f.submit 'Send', class: "main__footer--send"
-  -# %label
-  -#  %i.fa.fa-picture-o{class: "main__footer--image"}
-  -#  %input{type: "file",id: "filesend"}
+
