@@ -28,7 +28,7 @@
       -# = f.collection_check_boxes :user_ids, User.all, :id, :name
       
       #chat-group-users
-        .chat-group-user.clearfix.js-chat-member{:id => "${current_user.id}"}>
+        .chat-group-user.clearfix.js-chat-member.current_id{:id => "#{current_user.id}"}>
           =f.text_field :user_ids, name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"
           %p.chat-group-user__name
             = current_user.name

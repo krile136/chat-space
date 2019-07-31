@@ -41,9 +41,12 @@ $(document).on('turbolinks:load', function () {
 
         .done(function (users) {
           $("#user-search-result").empty();
+          var current_id = $(".current_id").attr('id');
           if (users.length != 0) {
             users.forEach(function (user) {
-              appendUser(user);
+              if (user.id != current_id) {
+                appendUser(user); 
+              }
             });
           }
           else {
