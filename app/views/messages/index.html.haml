@@ -3,14 +3,14 @@
   .main
     .main__header
       .main__header--room-name
-        = current_user.groups[params[:group_id].to_i - 1].name
+        = @group.name
       = link_to edit_group_path(params[:group_id]), class: "main__header--button" do
         .main__header--edit
           Edit
       %ul.main__header--member
         %li
           Member :
-          - current_user.groups[params[:group_id].to_i - 1].users.each do |user|
+          - @group.users.each do |user|
             = user.name
     .main__chat
       .messages
