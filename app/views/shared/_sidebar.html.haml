@@ -11,5 +11,5 @@
       .sidebar__room
         .sidebar__room--name
           = group.name
-        .sidebar__room--text
+        .sidebar__room--text{"data-sidebar-message-group-id":"#{group.id}"}
           = group.show_last_message

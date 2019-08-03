@@ -2,7 +2,7 @@
   = render 'shared/sidebar'
   .main
     .main__header
-      .main__header--room-name
+      .main__header--room-name{"data-group-id":"#{@group.id}"}
         = @group.name
       = link_to edit_group_path(params[:group_id]), class: "main__header--button" do
         .main__header--edit
