@@ -47,8 +47,7 @@ $(document).on('turbolinks:load', function () {
     .done(function (data) {
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.main__footer--input').val("");
-      $('#filesend').val("");
+      $('#new_message')[0].reset();
       scrollBottom();
       changeRoomContent(data.content, data.group_id)
     })
