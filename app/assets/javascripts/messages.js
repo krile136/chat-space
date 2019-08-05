@@ -63,30 +63,33 @@ $(document).on('turbolinks:load', function () {
   var reloadMessages = function () {
     var group_id = $('.main__header--room-name').data("group-id");
     var last_message_id = $('.main__chat--clear').last().data("message-id");
-    $.ajax({
-      url: "api/messages",
-      type: 'get',
-      dataType: 'json',
-      data: { id: last_message_id }
-    })
-    .done(function (messages) {
-      var insertHTML = "";
-      if (messages.length !== 0) {
-        var msg_group_id = messages[0].group_id;
-        if (msg_group_id == group_id) {
-          messages.forEach(function (message) {
-            insertHTML = buildHTML(message);
-            $('.messages').append(insertHTML);
-          });
-          scrollBottom();
+    
+    if (group_id !== void 0) {
+      $.ajax({
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: { id: last_message_id }
+      })
+      .done(function (messages) {
+        var insertHTML = "";
+        if (messages.length !== 0) {
+          var msg_group_id = messages[0].group_id;
+          if (msg_group_id == group_id) {
+            messages.forEach(function (message) {
+              insertHTML = buildHTML(message);
+              $('.messages').append(insertHTML);
+            });
+            scrollBottom();
+          };
+          var content = messages.slice(-1)[0].content;
+          changeRoomContent(content, msg_group_id);
         };
-        var content = messages.slice(-1)[0].content;
-        changeRoomContent(content, msg_group_id);
-      };
-    })
-    .fail(function () {
-      alert('自動更新に失敗しました');
-    });
+      })
+      .fail(function () {
+        alert('自動更新に失敗しました');
+      });
+    }
   }
   setInterval(reloadMessages, 5000);
 })
