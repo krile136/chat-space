@@ -64,7 +64,9 @@ $(document).on('turbolinks:load', function () {
     var group_id = $('.main__header--room-name').data("group-id");
     var last_message_id = $('.main__chat--clear').last().data("message-id");
     
-    if (group_id !== void 0) {
+    if (group_id === void 0) {
+      console.log("out of room");
+    }else{
       $.ajax({
         url: "api/messages",
         type: 'get',
