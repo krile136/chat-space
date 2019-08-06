@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', function () {
     var last_message_id = $('.main__chat--clear').last().data("message-id");
     
     if (group_id === void 0) {
-      console.log("out of room");
+ 
     }else{
       $.ajax({
         url: "api/messages",
@@ -89,8 +89,7 @@ $(document).on('turbolinks:load', function () {
         };
       })
       .fail(function () {
-        // alert('自動更新に失敗しました');
-        console.log('failed');
+        alert('自動更新に失敗しました');
       });
     }
   }
