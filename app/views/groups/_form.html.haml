@@ -28,10 +28,17 @@
       -# = f.collection_check_boxes :user_ids, User.all, :id, :name
       
       #chat-group-users
-        .chat-group-user.clearfix.js-chat-member.current_id{:id => "#{current_user.id}"}>
+        .chat-group-user.clearfix.js-chat-member.current_id{:id => "#{current_user.id}"}
           =f.text_field :user_ids, name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"
           %p.chat-group-user__name
             = current_user.name
+        - @group.users.each do |user|
+          - if user.name != current_user.name
+            .chat-group-user.clearfix.js-chat-member{:id => "#{user.id}"}
+              =f.text_field :user_ids, name: "group[user_ids][]", type: "hidden", value: "#{user.id}"
+              %p.chat-group-user__name
+                = user.name
+              %a.user_search_remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
         #member_search_result
 
   .chat-group-form__field.clearfix

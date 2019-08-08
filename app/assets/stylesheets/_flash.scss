@@ -5,9 +5,11 @@ $alert_orange: #F35500;
 
 .notification {
   z-index: 1;
+
 }
 
 .flash {
+  overflow: hidden;
   color: white;
   text-align: center;
   &__alert{
