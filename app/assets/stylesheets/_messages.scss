@@ -76,8 +76,11 @@
     }
     &--finish-space{
       clear: both;
-      height: 200px; 
+      height: 100px; 
     }
+  }
+  &__chat::-webkit-scrollbar{
+    display: none;
   }
   &__footer{
     @include fixed_width;

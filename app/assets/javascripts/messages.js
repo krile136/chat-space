@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function () {
   // 一番下までスクロール
   function scrollBottom() {
     var target = $('.main__chat--finish-space').offset().top;
-    $('html,body').animate({ scrollTop: target }, 300, 'swing');
+    $('.main__chat').animate({ scrollTop: target }, 200, 'swing');
   }
 
   // sidebar内の最新コメントを更新
