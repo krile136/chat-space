@@ -44,7 +44,8 @@
   &__chat{
     padding-left: $main-side-margin;
     padding-top: $main-header-height + 6px;
-    min-height: 100vh;
+    height: calc(100vh - 90px);
+    overflow: scroll;
     background-color: $main-chat-color;
     &--clear{
       clear: both;
