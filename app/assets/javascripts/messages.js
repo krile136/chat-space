@@ -20,8 +20,7 @@ $(document).on('turbolinks:load', function () {
 
   // 一番下までスクロール
   function scrollBottom() {
-    var target = $('.main__chat--finish-space').offset().top;
-    $('.main__chat').animate({ scrollTop: target }, 200, 'swing');
+    $('.main__chat').animate({ scrollTop: $('.main__chat').get(0).scrollHeight }, 'fast');
   }
 
   // sidebar内の最新コメントを更新
